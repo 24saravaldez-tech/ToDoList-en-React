@@ -1,0 +1,79 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    /* font-size: 62.5%;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+} */
+:root {
+    --bg-primary: #a5c3fe;
+    --bg-secondary: #DDE9FA;
+
+    --blue-light: #70b6f6;
+    --blue: #A8C9F4;
+
+    --pink-light: #f9b5c9;
+    --pink: #f191b0;
+
+    --cream: #F9E9D8;
+
+    --white: rgba(255,255,255,.75);
+    --white-hover: rgba(255,255,255,.9);
+
+    --shadow: rgba(107,136,196,.18);
+
+    --text: #475569;
+    --text-light: #7B879C;
+
+    --border: rgba(255,255,255,.45);
+}
+
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    font-size:62.5%;
+}
+
+body{
+    min-height:100vh;
+
+    font-family:'Poppins', sans-serif;
+    color:var(--text);
+
+    background:
+        radial-gradient(circle at top left, var(--cream), transparent 40%),
+        radial-gradient(circle at bottom left, var(--blue-light), transparent 45%),
+        radial-gradient(circle at right, var(--pink-light), transparent 45%),
+        linear-gradient(
+            180deg,
+            var(--bg-primary),
+            var(--bg-secondary)
+        );
+
+    background-attachment:fixed;
+}
+
+/* ===========================
+   CONTENEDOR PRINCIPAL
+=========================== */
+
+.app{
+
+    width:min(80rem,90%);
+
+    margin:4rem auto;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:2.5rem;
+}

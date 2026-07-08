@@ -1,0 +1,55 @@
+.create-todo-button{
+
+    width:6rem;
+    height:6rem;
+
+    position:fixed;
+
+    right:4rem;
+    bottom:4rem;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:none;
+    border-radius:50%;
+
+    background:linear-gradient(
+        135deg,
+        var(--pink-light),
+        var(--pink)
+    );
+
+    color:white;
+
+    font-size:3.2rem;
+    font-weight:300;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 1rem 2.5rem rgba(239,184,201,.45);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        filter .25s ease;
+}
+
+.create-todo-button:hover{
+
+    transform:
+        translateY(-3px)
+        scale(1.06);
+
+    filter:brightness(1.05);
+
+    box-shadow:
+        0 1.5rem 3rem rgba(239,184,201,.55);
+}
+
+.create-todo-button:active{
+
+    transform:scale(.95);
+}
