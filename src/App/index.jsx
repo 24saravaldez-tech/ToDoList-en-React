@@ -1,12 +1,10 @@
 import React, { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from './assets/vite.svg'
-// import heroImg from './assets/hero.png'
-import { TodoCounter } from './ToDoCounter/index';
-import { TodoSearch } from './TodoSearch';
-import { TodoList } from './TodoList';
-import { CreateTodoButton } from './CreateTodoButton'
-import { TodoItem } from './TodoItem'
+import { TodoCounter } from '../ToDoCounter/index';
+import { TodoSearch } from '../TodoSearch';
+import { TodoList } from '../TodoList';
+import { CreateTodoButton } from '../CreateTodoButton'
+import { TodoItem } from '../TodoItem'
+import { useLocalStorage } from './useLocalStorage';
 import './app.css'
 
 
@@ -21,29 +19,7 @@ import './app.css'
 // localStorage.setItem('TODOS_V1', JSON.stringify(defaultTodos));
 // localStorage.removeItem('TODOS_V1')
 
-function useLocalStorage(itemNane, initialValue) {
 
-  const localStorageItem = localStorage.getItem(itemNane)
-
-  let parsedItems;
-
-  if (!localStorageItem) {
-    localStorage.setItem(itemNane, JSON.stringify([initialValue]))
-    parsedTodos = [initialValue];
-  } else {
-    parsedItems = JSON.parse(localStorageItem)
-  }
-
-  const [item, setItem] = React.useState(parsedItems)
-
-  const saveItem = (item) => {
-    localStorage.setItem(itemNane, JSON.stringify(item))
-    setItem(item)
-  };
-
-  return [item, saveItem]
-
-}
 
 function App() {
   const [todos, saveTodos] = useLocalStorage('TODOS_V1', []);
@@ -107,4 +83,4 @@ function App() {
   );
 };
 
-export default App
+export { App }
