@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from './assets/vite.svg'
 // import heroImg from './assets/hero.png'
-import { TodoCounter } from './ToDoCounter';
+import { TodoCounter } from './ToDoCounter/index';
 import { TodoSearch } from './TodoSearch';
 import { TodoList } from './TodoList';
 import { CreateTodoButton } from './CreateTodoButton'
@@ -10,16 +10,43 @@ import { TodoItem } from './TodoItem'
 import './app.css'
 
 
-const defaultTodos = [
-  { text: 'Cortar cebolla', completed: false },
-  { text: 'Completar el curso', completed: false },
-  { text: 'balalalal', completed: false },
-  { text: 'llorar ', completed: false },
-  { text: 'shashsahahahsha ', completed: false },
-]
+// const defaultTodos = [
+//   { text: 'Cortar cebolla', completed: false },
+//   { text: 'Completar el curso', completed: false },
+//   { text: 'balalalal', completed: false },
+//   { text: 'llorar ', completed: false },
+//   { text: 'shashsahahahsha ', completed: false },
+// ]
+
+// localStorage.setItem('TODOS_V1', JSON.stringify(defaultTodos));
+// localStorage.removeItem('TODOS_V1')
+
+function useLocalStorage(itemNane, initialValue) {
+
+  const localStorageItem = localStorage.getItem(itemNane)
+
+  let parsedItems;
+
+  if (!localStorageItem) {
+    localStorage.setItem(itemNane, JSON.stringify([initialValue]))
+    parsedTodos = [initialValue];
+  } else {
+    parsedItems = JSON.parse(localStorageItem)
+  }
+
+  const [item, setItem] = React.useState(parsedItems)
+
+  const saveItem = (item) => {
+    localStorage.setItem(itemNane, JSON.stringify(item))
+    setItem(item)
+  };
+
+  return [item, saveItem]
+
+}
 
 function App() {
-  const [todos, setTodos] = React.useState(defaultTodos);
+  const [todos, saveTodos] = useLocalStorage('TODOS_V1', []);
   const [searchValue, setSearchValue] = React.useState('');
 
   const searchedTodos = todos.filter(
@@ -31,15 +58,13 @@ function App() {
   const completedTodos = todos.filter(todo => !!todo.completed).length;
   const totalTodos = todos.length;
 
-  console.log('los usuarios buscan todo de ' + searchValue)
-
   const completeTodo = (text) => {
     const newTodos = [...todos];
     const todoIndex = newTodos.findIndex(
       (todo => todo.text === text)
     )
     newTodos[todoIndex].completed = true;
-    setTodos(newTodos);
+    saveTodos(newTodos);
   }
 
   const deleteTodo = (text) => {
@@ -48,11 +73,10 @@ function App() {
       (todo => todo.text === text)
     )
     newTodos.splice(todoIndex, 1);
-    setTodos(newTodos);
+    saveTodos(newTodos);
   }
 
   return (
-    //react no puede retornar varios objetos. Para eso se debe envolver dentro de un solo div.
 
     <main className='app'>
       <TodoCounter

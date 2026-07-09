@@ -1,16 +1,78 @@
-# React + Vite
+# ✅ React ToDo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Una aplicación de tareas desarrollada con **React.js** como parte de mi proceso de aprendizaje del framework.
 
-Currently, two official plugins are available:
+Este proyecto me permitió comprender los fundamentos de React mediante la construcción de una aplicación interactiva utilizando componentes reutilizables, manejo de estado y comunicación entre componentes.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## ✨ Características
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 📋 Visualización de tareas
+- 🔍 Búsqueda en tiempo real
+- ✅ Marcar tareas como completadas
+- ❌ Eliminar tareas
+- 📊 Contador de tareas completadas
+- ⚛️ Arquitectura basada en componentes
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tecnologías
+
+- React
+- JavaScript (ES6+)
+- CSS3
+- Vite
+
+
+---
+
+## 📚 Conceptos practicados
+
+- Componentes
+- Props
+- State (`useState`)
+- Renderizado de listas
+- Renderizado condicional
+- Eventos
+- Comunicación entre componentes
+- Desestructuración de props
+- Funciones callback
+- Organización de proyectos en React
+
+---
+
+## 🚀 Instalación
+
+Clona el repositorio:
+
+```bash
+git clone https://github.com/tu-usuario/react-todo.git
+```
+
+Instala las dependencias:
+
+```bash
+npm install
+```
+
+Inicia el proyecto:
+
+```bash
+npm run dev
+```
+
+---
+
+## 🎯 Objetivo
+
+Más que desarrollar una simple lista de tareas, este proyecto tuvo como objetivo comprender la filosofía de React y fortalecer conceptos fundamentales como la creación de componentes reutilizables, el flujo de datos mediante props y el manejo del estado de la aplicación.
+
+---
+
+
+## 👩‍💻 Desarrollado por
+
+**Sara Valdez**
+
+Apasionada por el desarrollo de software y el aprendizaje continuo.
