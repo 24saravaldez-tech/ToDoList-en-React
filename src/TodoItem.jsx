@@ -5,17 +5,14 @@ import './TodoItem.css'
 function TodoItem(props) {
     return (
         <li className='todo-item'>
-            {/* <span 
-            className='checkmarkV'
-            onClick={props.onComplete}>V</span> */}
-            <CompleteIcon />
-            {/* <{() => CompleteIcon(props)} /> */}
+            <CompleteIcon
+                completed={props.completed}
+                onComplete = {props.onComplete} />
             <p className={props.completed ? 'completed' : ''} >{props.text}</p>
 
-            <DeleteIcon />
-            {/* <span 
-            className='checkmarkX'
-            onClick={props.onDelete}>X</span> */}
+            <DeleteIcon
+                onDelete = {props.onDelete}
+                />
         </li>
     );
 }

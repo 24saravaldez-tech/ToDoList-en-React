@@ -1,102 +1,72 @@
-.todo-item{
-
-    width:100%;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    gap:1.6rem;
-
-    padding:1.6rem 2rem;
-
-    background:var(--white);
-
-    border:1px solid var(--border);
-
-    border-radius:2rem;
-
-    backdrop-filter:blur(18px);
-
+.todo-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.6rem;
+    padding: 1.6rem 2rem;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 2rem;
+    backdrop-filter: blur(18px);
     box-shadow:
         0 .8rem 2rem var(--shadow);
-
     transition:
         transform .25s ease,
         box-shadow .25s ease,
         background .25s ease;
 }
 
-.todo-item:hover{
-
-    transform:translateY(-2px);
-
-    background:var(--white-hover);
-
+.todo-item:hover {
+    transform: translateY(-2px);
+    background: var(--white-hover);
     box-shadow:
-        0 1.4rem 3rem rgba(107,136,196,.22);
+        0 1.4rem 3rem rgba(107, 136, 196, .22);
 }
 
-.todo-item p{
-
-    flex:1;
-
-    margin:0;
-
-    color:var(--text);
-
-    font-size:1.6rem;
-
-    font-weight:500;
-
-    text-align:left;
-
-    word-break:break-word;
+.todo-item p {
+    flex: 1;
+    margin: 0;
+    color: var(--text);
+    font-size: 1.6rem;
+    font-weight: 500;
+    text-align: left;
+    word-break: break-word;
 }
 
-.Icons{
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    width:3.2rem;
-    height:3.2rem;
-
-    border-radius:50%;
-
-    font-size:1rem;
-
-    font-weight:600;
-
-    cursor:pointer;
-
-    transition:
-        background .25s,
-        color .25s,
-        transform .25s;
+.Icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.4rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
-.checkMarck:hover{
-
-    background: rgb(189, 234, 123);
-
-    color:white;
-
-    transform:scale(1.08);
+.checkMarck:hover {
+    background: rgb(110, 165, 28);
+    border-radius: 50%;
+    color: white;
+    transform: scale(1.08);
 }
 
-.checkDelete:hover{
-
-    background:var(--pink-light);
-
-    color:#D14B73;
-
-    transform:scale(1.08);
+.checkDelete:hover {
+    border-radius: 50%;
+    background: var(--pink-light);
+    color: #D14B73;
+    transform: scale(1.08);
 }
 
-.completed{
+.checkMarck:hover .Icons {
+    fill: greenyellow;
+}
+
+.checkDelete:hover .Icons {
+    fill: red;
+}
+
+.completed {
     text-decoration: line-through;
-    text-decoration-color: red;
+    text-decoration-color: rgb(0, 51, 255);
 }

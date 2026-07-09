@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './TodoCounter.css'
 
 function TodoCounter({ total, completed }) { //con las llaves se saca el texto o informacion interior

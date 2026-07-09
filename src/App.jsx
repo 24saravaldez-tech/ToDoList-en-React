@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
+// import reactLogo from './assets/react.svg'
+// import viteLogo from './assets/vite.svg'
+// import heroImg from './assets/hero.png'
 import { TodoCounter } from './ToDoCounter';
 import { TodoSearch } from './TodoSearch';
 import { TodoList } from './TodoList';
@@ -42,7 +42,7 @@ function App() {
     setTodos(newTodos);
   }
 
-    const deleteTodo = (text) => {
+  const deleteTodo = (text) => {
     const newTodos = [...todos];
     const todoIndex = newTodos.findIndex(
       (todo => todo.text === text)
@@ -72,8 +72,8 @@ function App() {
             text={todo.text}
             completed={todo.completed}
             onComplete={() => completeTodo(todo.text)} //encapsulamiento. La primera arrow function evita que completeTodo se ejecute diretamente, sino que pasa hasta que se le da click/
-            onDelete = {() => deleteTodo(todo.text)}
-            />
+            onDelete={() => deleteTodo(todo.text)}
+          />
         ))}
       </TodoList>
 
