@@ -1,0 +1,59 @@
+
+.loading-item {
+    pointer-events: none;
+}
+
+.loading-circle,
+.loading-text {
+    position: relative;
+    overflow: hidden;
+    background: #e7e7e7;
+}
+
+.loading-circle::after,
+.loading-text::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.8),
+        transparent
+    );
+    animation: shimmer 1.3s infinite;
+}
+
+.loading-circle {
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.loading-text {
+    flex: 1;
+    height: 1.8rem;
+    border-radius: 1rem;
+}
+
+.loading-item {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes pulse {
+    0%,100% {
+        opacity: .85;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
