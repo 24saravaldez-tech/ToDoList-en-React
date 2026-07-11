@@ -1,0 +1,82 @@
+form {
+    width: 90%;
+    max-width: 500px;
+    background: #FFFFFF;
+    border-radius: 24px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+form label {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    color: #3F3D56;
+}
+
+form textarea {
+    width: 100%;
+    min-height: 140px;
+    resize: none;
+    padding: 16px;
+    border: 2px solid #E4E4E7;
+    border-radius: 16px;
+    outline: none;
+    font-size: 1.6rem;
+    font-family: inherit;
+    color: #3F3D56;
+    transition: all .25s ease;
+}
+
+form textarea::placeholder {
+    color: #A1A1AA;
+}
+
+form textarea:focus {
+    border-color: #FF5C8A;
+    box-shadow: 0 0 0 4px rgba(255, 92, 138, .15);
+}
+
+.TodoForm-buttonContainer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+}
+
+.TodoForm-buttonContainer button {
+    min-width: 120px;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 14px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .25s ease;
+}
+
+.TodoForm-buttonContainer button[type="button"] {
+    background: #F4F4F5;
+    color: #52525B;
+}
+
+.TodoForm-buttonContainer button[type="button"]:hover {
+    background: #E4E4E7;
+}
+
+.TodoForm-buttonContainer button[type="submit"] {
+    background: linear-gradient(135deg, #FF5C8A, #FF2D6F);
+    color: white;
+    box-shadow: 0 8px 20px rgba(255, 45, 111, .3);
+}
+
+.TodoForm-buttonContainer button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(255, 45, 111, .4);
+}
+
+.TodoForm-buttonContainer button:active {
+    transform: scale(.97);
+}

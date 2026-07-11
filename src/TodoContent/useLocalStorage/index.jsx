@@ -30,7 +30,7 @@ function useLocalStorage(itemNane, initialValue) {
         setItem(item)
     };
 
-    return { item, saveItem, loading, error };
+    return { item, saveItem, loading, error};
 
 }
 

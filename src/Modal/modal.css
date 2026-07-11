@@ -1,0 +1,12 @@
+.ModalBackground {
+    position: fixed;
+    inset: 0;
+    background: rgba(32, 35, 41, 0.8);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1000;
+    backdrop-filter: blur(4px);
+}

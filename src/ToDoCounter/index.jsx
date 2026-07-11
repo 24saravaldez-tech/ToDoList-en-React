@@ -1,22 +1,22 @@
-import { useState } from 'react';
-import './TodoCounter.css'
+import React from 'react';
+import './TodoCounter.css';
+import { TodoContext } from '../TodoContent';
 
-function TodoCounter({ total, completed }) { //con las llaves se saca el texto o informacion interior
-  let respuesta;
+function TodoCounter() {
 
-  if (total == completed) {
-    respuesta =
-      <h1>
-        Felicidades! Has completado todos tus ToDo's hoy!!!
-      </h1>
-  } else {
-    respuesta =
-      <h1>
-        Haz completado {completed} de {total} ToDo's
-      </h1>
-  }
+  const {
+    totalTodos,
+    completedTodos
+  } = React.useContext(TodoContext);
+
   return (
-    respuesta
+    <h1>
+      {((totalTodos !== completedTodos) && totalTodos > 0)
+        ? `Has completado ${completedTodos} de ${totalTodos} ToDos`
+        : totalTodos === 0
+        ? 'No tienes ninguna tarea aun. Crea tu primer ToDo'
+        : '¡Felicidades! Has completado todos tus ToDos hoy!!!'}
+    </h1>
   );
 }
 
