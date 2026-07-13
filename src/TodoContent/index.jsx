@@ -18,28 +18,28 @@ function TodoProvider({ children }) {
     const totalTodos = todos.length;
 
     const addTodo = (text) => {
+        if(text.trim() == ''){
+            return;
+        }
         const newTodos = [...todos];
         newTodos.push({
+            id: crypto.randomUUID(),
             text,
             completed: false
-    })
+        })
         saveTodos(newTodos)
     };
 
-    const completeTodo = (text) => {
+    const completeTodo = (id) => {
         const newTodos = [...todos];
-        const todoIndex = newTodos.findIndex(
-            (todo => todo.text === text)
-        )
-        newTodos[todoIndex].completed = true;
+        const todoIndex = newTodos.findIndex(todo => todo.id === id)
+        newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
         saveTodos(newTodos);
     }
 
-    const deleteTodo = (text) => {
+    const deleteTodo = (id) => {
         const newTodos = [...todos];
-        const todoIndex = newTodos.findIndex(
-            (todo => todo.text === text)
-        )
+        const todoIndex = newTodos.findIndex(todo => todo.id === id)
         newTodos.splice(todoIndex, 1);
         saveTodos(newTodos);
     }
@@ -57,7 +57,8 @@ function TodoProvider({ children }) {
             completedTodos,
             openModal,
             setOpenModal,
-            addTodo
+            addTodo,
+            todos
         }} >
             {children}
         </TodoContext.Provider >

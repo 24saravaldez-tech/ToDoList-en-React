@@ -8,6 +8,7 @@ import { TodosError } from "../TodosError";
 import { EmptyTodos } from '../EmptyTodos';
 import { TodoContext } from '../TodoContent';
 import { Modal } from '../Modal';
+import { EmptySearch } from '../EmptySearch';
 import './app.css'
 import React from 'react';
 import { TodoForm } from '../TodoForm';
@@ -22,7 +23,8 @@ function AppUI() {
         deleteTodo,
         searchedTodos,
         openModal,
-        setOpenModal } = React.useContext(TodoContext)
+        setOpenModal,
+        todos } = React.useContext(TodoContext)
 
     return (
 
@@ -41,16 +43,19 @@ function AppUI() {
                     </>
                 )}
 
-                {error && <TodosError />}
-                {(!loading && searchedTodos.length == 0) && <EmptyTodos />}
+                {false && <TodosError />}
+
+                {(!loading && todos.length === 0) && <EmptyTodos />}
+                {(!loading && todos.length > 0 && searchedTodos.length === 0) && <EmptySearch />}
+
 
                 {searchedTodos.map(todo => (
                     <TodoItem
-                        key={todo.text}
+                        key={todo.id}
                         text={todo.text}
                         completed={todo.completed}
-                        onComplete={() => completeTodo(todo.text)} //encapsulamiento. La primera arrow function evita que completeTodo se ejecute diretamente, sino que pasa hasta que se le da click/
-                        onDelete={() => deleteTodo(todo.text)}
+                        onComplete={() => completeTodo(todo.id)}
+                        onDelete={() => deleteTodo(todo.id)}
                     />
                 ))}
             </TodoList>

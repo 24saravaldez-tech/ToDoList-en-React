@@ -1,0 +1,72 @@
+.empty-todos {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    gap: 1.2rem;
+
+    padding: clamp(3.2rem, 8vw, 5.6rem) clamp(2rem, 6vw, 4rem);
+
+    background: var(--white);
+    border: 1px dashed var(--border);
+    border-radius: 2.4rem;
+
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 .8rem 2rem var(--shadow);
+
+    animation: empty-todos-in .4s ease;
+}
+
+.empty-todos-icon {
+    width: clamp(5.6rem, 14vw, 8rem);
+    height: clamp(5.6rem, 14vw, 8rem);
+
+    color: var(--pink);
+
+    opacity: .85;
+}
+
+.empty-todos-title {
+    margin: 0;
+
+    font-size: clamp(1.8rem, 4vw, 2.2rem);
+    font-weight: 700;
+
+    color: var(--text);
+}
+
+.empty-todos-subtitle {
+    margin: 0;
+
+    max-width: 34rem;
+
+    font-size: clamp(1.3rem, 3vw, 1.5rem);
+    font-weight: 400;
+    line-height: 1.5;
+
+    color: var(--text-light);
+}
+
+@keyframes empty-todos-in {
+    from {
+        opacity: 0;
+        transform: translateY(.8rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 480px) {
+    .empty-todos {
+        border-radius: 1.8rem;
+        gap: .8rem;
+    }
+}
