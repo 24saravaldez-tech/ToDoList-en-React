@@ -1,20 +1,27 @@
 form {
     width: 90%;
     max-width: 500px;
-    background: #FFFFFF;
+
+    background: var(--white);
+    backdrop-filter: blur(18px);
+    border: 1px solid var(--border);
+
     border-radius: 24px;
     padding: 32px;
+
     display: flex;
     flex-direction: column;
     gap: 24px;
-    box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.15);
+
+    box-shadow: 0px 20px 50px var(--shadow);
 }
 
 form label {
+    font-family: 'Fredoka', sans-serif;
     font-size: 2rem;
     font-weight: 700;
     text-align: center;
-    color: #3F3D56;
+    color: var(--text);
 }
 
 form textarea {
@@ -22,22 +29,23 @@ form textarea {
     min-height: 140px;
     resize: none;
     padding: 16px;
-    border: 2px solid #E4E4E7;
+    border: 2px solid var(--border);
     border-radius: 16px;
     outline: none;
     font-size: 1.6rem;
     font-family: inherit;
-    color: #3F3D56;
+    color: var(--text);
+    background: rgba(255, 255, 255, .5);
     transition: all .25s ease;
 }
 
 form textarea::placeholder {
-    color: #A1A1AA;
+    color: var(--text-light);
 }
 
 form textarea:focus {
-    border-color: #FF5C8A;
-    box-shadow: 0 0 0 4px rgba(255, 92, 138, .15);
+    border-color: var(--pink);
+    box-shadow: 0 0 0 4px var(--shadow);
 }
 
 .TodoForm-buttonContainer {
@@ -58,23 +66,24 @@ form textarea:focus {
 }
 
 .TodoForm-buttonContainer button[type="button"] {
-    background: #F4F4F5;
-    color: #52525B;
+    background: var(--bg-secondary);
+    color: var(--text-light);
 }
 
 .TodoForm-buttonContainer button[type="button"]:hover {
-    background: #E4E4E7;
+    background: var(--pink-light);
+    color: var(--text);
 }
 
 .TodoForm-buttonContainer button[type="submit"] {
-    background: linear-gradient(135deg, #FF5C8A, #FF2D6F);
+    background: linear-gradient(135deg, var(--pink-light), var(--pink));
     color: white;
-    box-shadow: 0 8px 20px rgba(255, 45, 111, .3);
+    box-shadow: 0 8px 20px var(--shadow);
 }
 
 .TodoForm-buttonContainer button[type="submit"]:hover {
     transform: translateY(-2px);
-    box-shadow: 0 12px 24px rgba(255, 45, 111, .4);
+    box-shadow: 0 12px 24px var(--shadow);
 }
 
 .TodoForm-buttonContainer button:active {

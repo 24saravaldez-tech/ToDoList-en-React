@@ -1,5 +1,5 @@
 input{
-    width: 50rem;
+    width: min(50rem, 100%);
     height: 5rem;
 
     display: block;
@@ -14,7 +14,7 @@ input{
     backdrop-filter: blur(18px);
 
     color: #546176;
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-family: inherit;
 
     outline: none;

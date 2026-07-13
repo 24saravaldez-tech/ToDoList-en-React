@@ -14,23 +14,25 @@
     transition:
         transform .25s ease,
         box-shadow .25s ease,
-        background .25s ease;
+        background .25s ease,
+        border-color .25s ease;
 }
 
 .todo-item:hover {
     transform: translateY(-2px);
     background: var(--white-hover);
+    border-color: var(--pink-light);
     box-shadow:
-        0 1.4rem 3rem rgba(107, 136, 196, .22);
+        0 1.4rem 3rem var(--shadow);
 }
 
 .todo-item p {
     flex: 1;
     margin: 0;
     color: var(--text);
-    font-size: 1.6rem;
+    font-size: 1.9rem;
     font-weight: 500;
-    text-align: left;
+    text-align: center;
     word-break: break-word;
 }
 
@@ -38,35 +40,45 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 2.4rem;
-    height: 2.5rem;
+    width: 1.8rem;
+    height: 1.8rem;
+    flex-shrink: 0;
+}
+
+.checkMarck,
+.checkDelete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.8rem;
+    height: 3.8rem;
     border-radius: 50%;
     cursor: pointer;
+    transition: background .2s ease, transform .2s ease;
 }
 
 .checkMarck:hover {
-    background: rgb(110, 165, 28);
-    border-radius: 50%;
+    background: var(--pink-light);
     color: white;
     transform: scale(1.08);
 }
 
 .checkDelete:hover {
-    border-radius: 50%;
-    background: var(--pink-light);
-    color: #D14B73;
+    background: var(--bg-secondary);
+    color: var(--pink);
     transform: scale(1.08);
 }
 
 .checkMarck:hover .Icons {
-    fill: greenyellow;
+    fill: var(--pink);
 }
 
 .checkDelete:hover .Icons {
-    fill: red;
+    fill: var(--pink);
 }
 
 .completed {
     text-decoration: line-through;
-    text-decoration-color: rgb(0, 51, 255);
+    text-decoration-thickness: 2.5px;
+    text-decoration-color: var(--pink);
 }
